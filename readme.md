@@ -22,3 +22,10 @@ Set prompt (single quotes so it doesn't get evaluated immediately).
 ```bash
 PS1='$(cpudump)$ '
 ```
+
+Test with stress
+```bash
+sudo apt install stress
+
+while :; do stress --cpu $(( $(nproc) * $RANDOM / 32767 )) --timeout 1; done
+```
