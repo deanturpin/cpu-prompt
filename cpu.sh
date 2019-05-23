@@ -1,15 +1,5 @@
 #!/bin/bash
 
-# prompt=$PS1
-
-# count=0
-# 
-# while :; do
-#   export PS1="$count $ "
-#   sleep 1
-#   (( ++count ))
-# done
-
 top -b - n 1 | grep %Cpu | cut -c9-11 | while read cpu; do
 
   # Back off if we've hit 100
@@ -23,4 +13,4 @@ top -b - n 1 | grep %Cpu | cut -c9-11 | while read cpu; do
   echo -n "$rep"
 done
 
-echo " $ "
+echo -n '\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$'
