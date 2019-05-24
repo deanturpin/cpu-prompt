@@ -3,7 +3,7 @@
 cpu-stat(){
 
   # Strip CPU info
-  stats=$(top -1 -b -n 1 | grep %Cpu | cut -c9-11 | tr '\n' ' ')
+  stats=$(top -b -n 1 | grep %Cpu | cut -c9-11 | tr '\n' ' ')
 
   # Create some colours
   idle='\u001b[32m'
