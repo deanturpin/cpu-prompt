@@ -21,7 +21,11 @@ cpu-status-string(){
     fi
   done
 
-  echo -en "$status_string $medium\u262e$reset "
+  # The prompt symbol
+  cursor="\u2605"
+
+  # Print the new prompt
+  echo -en "$status_string $medium$cursor$reset "
 }
 
 PS1='$(cpu-status-string)'
