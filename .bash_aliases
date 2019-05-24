@@ -6,11 +6,11 @@ cpu-status-string(){
   cpu_info=$(top -b -n 1 | grep %Cpu | cut -c9-11 | tr '\n' ' ')
 
   # Create some colours
-  idle='\u001b[32m'
-  low='\u001b[36m'
-  medium='\u001b[33m'
-  high='\u001b[31m'
-  reset='\u001b[0m'
+  idle="\u001b[32m"
+  low="\u001b[36m"
+  medium="\u001b[33m"
+  high="\u001b[31m"
+  reset="\u001b[0m"
 
   # Create the summary by appending a single character for each CPU
   for cpu in $cpu_info; do
