@@ -1,5 +1,3 @@
-Bash script that puts the current CPU usage right where you're looking!
-
 You could append it to your ```.bashrc``` but I find it easier to manage in
 ```.bash_aliases```. It uses ```top``` at the mo therefore inherits whatever
 processor breakdown you have. By default ```top``` only displays one processor
