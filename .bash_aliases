@@ -7,7 +7,7 @@ cpu-status-string(){
   low="\u001b[36m"
   medium="\u001b[33m"
   high="\u001b[31m"
-  reset="\u001b[0m"
+  reset="\u001b[00m"
 
   # Extract CPU info from top
   cpu_info=$(top -b -n 1 | grep %Cpu | cut -c9-11 | tr '\n' ' ')
@@ -21,7 +21,7 @@ cpu-status-string(){
     fi
   done
 
-  echo -en $status_string$reset
+  echo -en "$status_string$reset \u0950 "
 }
 
-PS1='$(cpu-status-string) $ '
+PS1='$(cpu-status-string)'
