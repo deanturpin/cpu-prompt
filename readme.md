@@ -1,7 +1,7 @@
-You could append it to your ```.bashrc``` but I find it easier to manage in
-```.bash_aliases```. It uses ```top``` to extra system information, therefore
-inherits your processor breakdown. By default ```top``` only displays one
-processor, hit '1' to show all CPUs and 'W' to save as a default.
+Bash script that creates a CPU utilisation string to be used as a shell prompt.
+It extracts CPU information from ```top``` therefore inherits your current
+processor summary. By default ```top``` only displays one processor, hit '1'
+to show all cores and 'W' to save as a default.
 
 Trial it in your current shell:
 ```bash
@@ -14,15 +14,15 @@ source .bash_aliases
 
 cpu-status-string(){
 
-  # Strip CPU info
-  cpu_info=$(top -b -n 1 | grep %Cpu | cut -c9-11 | tr '\n' ' ')
-
   # Create some colours
   idle="\u001b[32m"
   low="\u001b[36m"
   medium="\u001b[33m"
   high="\u001b[31m"
   reset="\u001b[0m"
+
+  # Extract CPU info from top
+  cpu_info=$(top -b -n 1 | grep %Cpu | cut -c9-11 | tr '\n' ' ')
 
   # Create the summary by appending a single character for each CPU
   for cpu in $cpu_info; do

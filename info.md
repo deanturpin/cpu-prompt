@@ -1,7 +1,7 @@
-You could append it to your ```.bashrc``` but I find it easier to manage in
-```.bash_aliases```. It uses ```top``` to extra system information, therefore
-inherits your processor breakdown. By default ```top``` only displays one
-processor, hit '1' to show all CPUs and 'W' to save as a default.
+Bash script that creates a CPU utilisation string to be used as a shell prompt.
+It extracts CPU information from ```top``` therefore inherits your current
+processor summary. By default ```top``` only displays one processor, hit '1'
+to show all cores and 'W' to save as a default.
 
 Trial it in your current shell:
 ```bash
