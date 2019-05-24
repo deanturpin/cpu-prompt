@@ -4,7 +4,7 @@ inherits your *current* ```top``` processor view. By default ```top``` displays
 only a single processor, hit '1' to show all cores and 'W' to save as the
 default.
 
-Trial it in your current shell:
+Trial it in your current shell first:
 ```bash
 source .bash_aliases
 ```
