@@ -21,7 +21,7 @@ cpu-status-string(){
     fi
   done
 
-  echo -en "$status_string$reset $low\u0950$reset "
+  echo -en "$status_string$reset $low\u16d2$reset "
 }
 
 PS1='$(cpu-status-string)'
