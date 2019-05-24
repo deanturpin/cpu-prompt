@@ -2,13 +2,20 @@
 
 top -b - n 1 | grep %Cpu | cut -c9-11 | while read cpu; do
 
-  # Back off if we've hit 100
-  (( $cpu >= 100 )) && cpu=99
+  red='\u001b[31m'
+  green='\u001b[32m'
+  cyan='\u001b[36m'
+  yellow='\u001b[33m'
+  reset='\u001b[0m'
 
-  # Print a single digit representation of CPU load
-  rep=$(( $cpu / 10 ))
+  # Init prompt
+  prommpt='-'
 
-  [[ $rep == "0" ]] && rep="_"
+  if (( $cpu < 25 )); then prompt+="${green}\u28c0"
+  elif (( $cpu < 50 )); then prompt+="${cyan}\u28e4"
+  elif (( $cpu < 75 )); then prompt+="${yellow}\u28f6"
+  else prompt+="${red}\u28ff"
+  fi
 
-  echo -n "$rep"
+  echo -en $prompt$reset
 done

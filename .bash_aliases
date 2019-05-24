@@ -1,5 +1,3 @@
-![](cpu.gif)
-```bash
 # Append to .bashrc or .bash_aliases
 
 cpu-stat(){
@@ -27,4 +25,3 @@ cpu-stat(){
 }
 
 PS1='$(cpu-stat) $ '
-```
