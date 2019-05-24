@@ -14,10 +14,10 @@ cpu-status-string(){
 
   # Create the summary by appending a single character for each CPU
   for cpu in $cpu_info; do
-    if (( $cpu < 25 ));   then status_string+="${idle}\u28c0"
-    elif (( $cpu < 50 )); then status_string+="${low}\u28e4"
-    elif (( $cpu < 75 )); then status_string+="${medium}\u28f6"
-    else                       status_string+="${high}\u28ff"
+    if (( $cpu < 25 ));   then status_string+="$idle\u28c0"
+    elif (( $cpu < 50 )); then status_string+="$low\u28e4"
+    elif (( $cpu < 75 )); then status_string+="$medium\u28f6"
+    else                       status_string+="$high\u28ff"
     fi
   done
 
