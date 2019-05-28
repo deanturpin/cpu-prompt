@@ -7,7 +7,7 @@ default.
 Trial it in your current shell first:
 ```bash
 git clone https://github.com/deanturpin/cpu-prompt
-cd cpu-prompt/
+cd cpu-prompt
 source .bash_aliases
 ```
 
